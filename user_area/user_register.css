@@ -1,0 +1,19 @@
+body{
+    background-image: url('plainBG.jpg');
+    color: black;
+}
+.container-fluid{
+    width: 60%;
+    margin:50px auto;
+    background-color: #fff;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 10px;
+}
+.btn{
+    padding: 7px 13px;
+    background-color:#CD3333;
+    color:#fff;
+}
+.btn:hover{
+    color:  #CD3333;
+}

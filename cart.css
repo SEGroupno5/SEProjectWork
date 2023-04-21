@@ -1,0 +1,39 @@
+.menu_navbar .container{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* cart section */
+.shopping_cart {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    font-size: 25px;
+    padding: 15px;
+    position: relative;
+    background-color: #cd3333;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.shopping_cart p{
+    transition: 0.5s ease-in-out;
+}
+.shopping_cart p:hover{
+    font-size: 28px;
+}
+.container-fluid{
+    width: 80%;
+    margin: auto;
+}
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-danger{
+    text-align: center;
+    color: #cd3333;
+    margin: 20px;
+}
