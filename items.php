@@ -39,7 +39,11 @@ session_start();
                     <div class="content-fluid header">
                             <div class="brand-details">
                                 <div class="brand-name">
+<<<<<<< HEAD
                                     <h2 class="tel text-white"><a href="index.php">MealRunner</a></h2>
+=======
+                                    <h2 class="tel text-white"><a href = 'index.php'>MealRunner</a></h2>
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
                                 </div>
                                 <div class="contact-logo text-white">
                                     <i class="fa-solid fa-basket-shopping"></i>
@@ -52,6 +56,7 @@ session_start();
                                     <input type="submit" value="Search" class="btn btn-outline-success text-white m-10" name = "search_btn">
                                     </form>
                                 </li>
+<<<<<<< HEAD
                                 <div class='d-flex'>  
                     
                 
@@ -73,6 +78,23 @@ session_start();
                                         }
                                     ?>
                     </div>
+=======
+                                
+                                    <?php
+                                        if(!isset($_SESSION['username'])){
+                                            echo"<li class='tabs nav-item user-account'>
+                                    <span> <a href='user_area/user_registration.php'>Register</a></span>
+                                    <div class='d-flex'>";
+                                        }else{
+                                            echo"<p>Welcome"." ".$_SESSION['username']." "."</p>";
+                                        }
+                                        if(!isset($_SESSION['username'])){
+                                            echo"<a href='user_area/user_login.php' class='login'><p></p>Login</a>";
+                                        }else{
+                                            echo"<a href='user_area/user_logout.php' class='logout'><p></p> Logout</a>";
+                                        }
+                                    ?>
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
                                     </div>
                                 </li>
                             </ul>
@@ -95,10 +117,21 @@ session_start();
             <div class="content-fluid">
                 <div class="navbar-container">
                     <ul class="categories">
+<<<<<<< HEAD
                         <?php 
                             getBreakfastCategories();
                             getLunchCategory();
                             getSuper();
+=======
+                        <?php
+                            getAssCategories();
+                            getBolerosAndShrugsCategories();
+                            getHairCategories();
+                            getHandBagsCategories();
+                            getJewelryCategories();
+                            getShoesCategories();
+                            getWatchesCategories();
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
                         ?>
                     </ul>
                 </div>
@@ -145,6 +178,7 @@ session_start();
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 <div class="wrapAll">
     <!-- top selling products -->
     <!-- calling the getTopSellingProducts -->
@@ -158,10 +192,29 @@ session_start();
             </ul>
         </div>
     </div>
+=======
+    
+    <!-- top selling products -->
+    <!-- calling the getTopSellingProducts -->
+        <div class='top-selling'>
+            <div class='content-container'>
+                <h1>BEST LOCAL AND CONTINENTAL DISHES</h1>
+                <div class='products' name = 'category'>
+                    <?php
+                        getTopsellingProduct();
+                        // $ip = getIPAddress();  
+                        // echo 'User Real IP Address - '.$ip;  
+
+                    ?>
+                </div>
+            </div>
+        </div>
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
         
 
         <!-- categories -->
         <div class="categories-product">
+<<<<<<< HEAD
             <div class="menu_container">
                 <div class="txt">
                     <h1>Get What You Want Here</h1>
@@ -179,18 +232,48 @@ session_start();
                     <img src="system/images/others/breakfast.jpg" alt="breakFast banner">
                     <h3>Super</h3>
                 </a>
+=======
+            <div class="content-container">
+                <div class="c-product">
+                    <div>
+                        <a href="accessories.php"><img src="systemFiles/images/products/accessories/ipad10gen-glass-removebg-preview.png" alt=""></a>
+                    </div>
+                    <p>Accessories</p>
+                </div>
+                <div class="c-product">
+                    <div>
+                        <a href="boleros.php"><img src="systemFiles/images/products/boleros/P00526944-removebg-preview.png" alt=""></a>
+                    </div>
+                    <p>Boleros and shrugs</p>
+                </div>
+                <div class="c-product">
+                    <div>
+                        <a href="hair.php">
+                            <img src="systemFiles/images/products/hair/14008301_18466013_1000-removebg-preview.png" alt="">
+                        </a>
+                    </div>
+                    <p>Hair accessories</p>
+                </div>
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
             </div>
         </div>
 
         <!-- Accessories -->
         <div class="top-selling accessories">
             <div class="content-container">
+<<<<<<< HEAD
                 <h1><?php 
                             getBreakfastCategories();
                     ?></h1>
                 <div class="products">
                    <?php
                        getUniqueBreakfastFood();
+=======
+                <h1><?php getAssCategories(); ?></h1>
+                <div class="products">
+                   <?php
+                       getUniqueAssCategory();
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
                     ?>
                 </div>
             </div>
@@ -198,6 +281,7 @@ session_start();
         <!-- Boleros and Shrugs -->
         <div class="top-selling Bolero-Shrugs">
             <div class="content-container">
+<<<<<<< HEAD
                 <h1>
                     <?php 
                             getLunchCategory();;
@@ -206,6 +290,12 @@ session_start();
                 <div class="products">
                     <?php    
                         getUniqueLunchFood();
+=======
+                <h1><?php getBolerosAndShrugsCategories(); ?></h1>
+                <div class="products">
+                    <?php    
+                        getUniquebolerosCategory();
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
                     ?>
                 </div>
             </div>
@@ -213,6 +303,7 @@ session_start();
         <!-- Hair Accessories -->
         <div class="top-selling Hair-Accessories">
             <div class="content-container">
+<<<<<<< HEAD
                 <h1>
                     <?php 
                             getSuper();
@@ -221,12 +312,65 @@ session_start();
                 <div class="products">
                     <?php    
                         getUniqueSuperFood();
+=======
+                <h1><?php  getHairCategories(); ?></h1>
+                <div class="products">
+                    <?php    
+                        getUniqueHairCategory();
                     ?>
                 </div>
             </div>
         </div>
+        <!-- Hand Bags -->
+        <div class="top-selling Hand-Bags">
+            <div class="content-container">
+                <h1><?php  getHandBagsCategories(); ?></h1>
+                <div class="products">
+                    <?php    
+                        getUniqueHandbagsCategory();
+                    ?>
+                </div>
+            </div>
+        </div>
+        <!-- Jewelry -->
+        <div class="top-selling Jewelry">
+            <div class="content-container">
+                <h1><?php getJewelryCategories(); ?></h1>
+                <div class="products">
+                    <?php    
+                        getUniqueJewlryCategory();
+                    ?>
+                </div>
+            </div>
+        </div>
+        <!-- Shoes -->
+        <div class="top-selling Shoes">
+            <div class="content-container">
+                <h1><?php getShoesCategories(); ?></h1>
+                <div class="products">
+                   <?php    
+                        getUniqueShoesCategory();
+                    ?>
+                </div>
+            </div>
+        </div>
+        <!-- Watches -->
+        <div class="top-selling Watches">
+            <div class="content-container">
+                <h1><?php getWatchesCategories(); ?></h1>
+                <div class="products">
+                    <?php    
+                        getUniqueWatchesCategory();
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
+                    ?>
+                </div>
+            </div>
+        </div>
+<<<<<<< HEAD
         
     </div>
+=======
+>>>>>>> aade32d44649cbe1a8a4e65fbc094b4eee98d4d1
 
     </div>
 
