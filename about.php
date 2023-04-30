@@ -23,7 +23,7 @@
                     <a href="index.php" class="active">About</a>
                 </li>
                 <li>
-                    <a href="system/pages/item.php">Items</a>
+                    <a href="items.php">Items</a>
                 </li>
                 <li>
                     <a href="index.php">Pages</a>
@@ -51,250 +51,25 @@
 
                     MealRunner's has a significant impact on the global economy, providing jobs for over 1.7 million people Around the country. The company also invests in local communities through various initiatives, such as the MealRunner House Charities, which provides support for families of seriously ill children </p>
                     <div class="dish_type">
-                        <h3>Type of Dishes</h3>
+                        <h3>Categories of Dishes</h3>
                     </div>
                     <div class="type_of_dishes">
                         <div class="local_dishes">
-                            <h3>Local Dishes</h3>
                             <ul>
                                 <li>
                                     <h4>BreakFast</h4> 
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
                                     <h4>Lunch</h4>  
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
                                     <h4>Super</h4>  
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="continental_dishes">
-                            <h3>Continental Dishes</h3>
-                            <ul>
-                                <li>
-                                    <h4>BreakFast</h4>  
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h4>Lunch</h4>  
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h4>Super</h4>  
-                                    <ul>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                        <li>
-                                            Lorem, ipsum.
-                                        </li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="btn">
-                        <p id="read_more">More</p>
+                        <p id="read_more">Hot</p>
                         <div class="btn_clicked_data">
                             <p>MealRunner's has outlined several initiatives and goals for the future, aimed at improving the sustainability of its operations and menu offerings, as well as enhancing the customer experience. Here are a few examples:
                                         <br>

@@ -16,6 +16,22 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css -->
     <link rel="stylesheet" href="items.css?v=<?= time();?>">
+    <style>
+        /* login */
+.login {
+    padding: 7px 20px;
+    margin-left: 10px;
+    background-color: #cd3333;
+    font-weight: 800;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.login a {
+    color: #fff;
+}
+    </style>
     
 </head>
 <body>
@@ -46,27 +62,33 @@ session_start();
                                 </div>
                             </div>
                             <ul class="navbar-nav">
-                                <li class="tabs nav-item search_form">
+                                <div class="search">
                                     <form class="d-flex search_form" role="search" action="search_products.php" method="get">
                                     <input class="form-control me-2" type="search" placeholder="Search all products here" aria-label="Search" name = "search_value">
                                     <input type="submit" value="Search" class="btn btn-outline-success text-white m-10" name = "search_btn">
-                                </li>
-                                <?php
+                                    </form>
+                </div>
+                <div class='d-flex'>  
+                    
+                
+                
+                                    <?php
                                         if(!isset($_SESSION['username'])){
-                                            echo"<li class='tabs nav-item user-account'>
-                                    <span> <a href='user_area/user_registration.php'>Register</a></span>
-                                    <div class='d-flex'>";
+                                            echo"<div class='register'>
+                                            <a href='user_area/user_registration.php'>Register</a>
+                                            </div>";
                                         }else{
-                                            echo"<p>Welcome"." ".$_SESSION['username']." "."</p>";
+                                            echo"<p class = 'user_name'>Welcome"." ".$_SESSION['username']." "."</p>";
                                         }
                                         if(!isset($_SESSION['username'])){
-                                            echo"<a href='user_area/user_login.php' class='login'><p></p>Login</a>";
+                                            echo"<div class='login'>
+                                            <a href='user_area/user_login.php'><p></p>Login</a>
+                                            </div>";
                                         }else{
-                                            echo"<a href='user_area/user_logout.php' class='logout'><p></p> Logout</a>";
+                                            echo"<div class = 'logout'><a href='user_area/user_logout.php' class='logout'><p></p> Logout</a></div>";
                                         }
                                     ?>
-                                    </div>
-                                </li>
+                    </div>
                             </ul>
                             <ul class="cart-container">
                                 <li class="nav-item">

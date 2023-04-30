@@ -142,7 +142,7 @@ if(isset($_POST['user_registration'])){
         echo"<script>window.open('user_registration.php','_self')</script>";
     }else{
     // insert query
-    move_uploaded_file($user_image_tmp,'user_image/$user_image');
+    move_uploaded_file($user_image_tmp,"../system/user_image/$user_image");
     $insert_query="insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_mobile) values('$username','$user_email','$hash_password','$user_image','$ip_address','$user_address','$user_mobile')";
     $run_query=mysqli_query($con, $insert_query);
     if($run_query){

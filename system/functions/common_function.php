@@ -60,6 +60,7 @@ function getTopsellingProduct(){
                         }
  }
 
+
 //  getting the categories products
 function get_unique_category(){
     global $con;
@@ -92,9 +93,11 @@ function get_unique_category(){
                         }
                     }
  }
-function getUniqueAssCategory(){
+
+//  function to display food staffs that belong to only breakfast category.
+function getUniqueBreakfastFood(){
     global $con;
-    $select_query="select * from `products` where category_id=11 order by rand() limit 0,6";
+    $select_query="select * from `products` where category_id=1 order by rand() limit 0,6";
                         //  limit 0,9
                         $result_query=mysqli_query($con,$select_query);
                         $num_of_rows=mysqli_num_rows($result_query);
@@ -109,184 +112,11 @@ function getUniqueAssCategory(){
                             $product_image1=$row['product_image1'];
                             $product_price=$row['product_price'];
                             echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                                            <div class='pro_image'>
+                                                <img src='system/product_images/$product_image1' alt='$product_title'>
                                             </div>
-                                        </div>";
-                        }
-                    }
- 
-      
-function getUniquebolerosCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=12 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
-                        }
-                    }
- 
-function getUniqueHairCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=13 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
-                        }
-                    }
- 
- 
-function getUniqueHandbagsCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=14 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
-                        }
-                    }
- 
-      
- 
-function getUniqueJewlryCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=15 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
-                        }
-                    }
- 
- 
-function getUniqueShoesCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=16 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
-                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
-                        }
-                    }
- 
-      
- 
-function getUniqueWatchesCategory(){
-    global $con;
-    $select_query="select * from `products` where category_id=17 order by rand() limit 0,6";
-                        //  limit 0,9
-                        $result_query=mysqli_query($con,$select_query);
-                        $num_of_rows=mysqli_num_rows($result_query);
-                        if($num_of_rows==0){
-                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
-                        }
-                        while($row=mysqli_fetch_assoc($result_query)){
-                            $product_id=$row['product_id'];
-                            $product_title=$row['product_title'];
-                            $product_description=$row['product_description'];
-                            $category_id=$row['category_id'];
-                            $product_image1=$row['product_image1'];
-                            $product_price=$row['product_price'];
-                            echo "<div class='product'>
-                                            <img src='systemFiles/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
+                                            <p class='product_title'>$product_title</p>
+                                            <p class='price'>&cent; <span style = 'color:red;'> $product_price</span></p>
                                             <div class = 'flex-btn'>
                                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
@@ -296,101 +126,103 @@ function getUniqueWatchesCategory(){
                     }
  
 
-// A function to display categories
-function getAssCategories(){
+//  Function to displacy Lunch food staffs
+function getUniqueLunchFood(){
     global $con;
-    $select_category="select * from `categories` where category_id = 11";
+    $select_query="select * from `products` where category_id=2 order by rand() limit 0,6";
+                        //  limit 0,9
+                        $result_query=mysqli_query($con,$select_query);
+                        $num_of_rows=mysqli_num_rows($result_query);
+                        if($num_of_rows==0){
+                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
+                        }
+                        while($row=mysqli_fetch_assoc($result_query)){
+                            $product_id=$row['product_id'];
+                            $product_title=$row['product_title'];
+                            $product_description=$row['product_description'];
+                            $category_id=$row['category_id'];
+                            $product_image1=$row['product_image1'];
+                            $product_price=$row['product_price'];
+                            echo "<div class='product'>
+                                            <div class='pro_image'>
+                                                <img src='system/product_images/$product_image1' alt='$product_title'>
+                                            </div>
+                                            <p class='product_title'>$product_title</p>
+                                            <p class='price'>&cent; <span style = 'color:red;'> $product_price</span></p>
+                                            <div class = 'flex-btn'>
+                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                                            </div>
+                                        </div>";
+                        }
+                    }
+ 
+// Function to display Super Food staffs
+function getUniqueSuperFood(){
+    global $con;
+    $select_query="select * from `products` where category_id=3 order by rand() limit 0,6";
+                        //  limit 0,9
+                        $result_query=mysqli_query($con,$select_query);
+                        $num_of_rows=mysqli_num_rows($result_query);
+                        if($num_of_rows==0){
+                            echo "<h2 class='text-center text-danger'>Sorry, this type of food is not available now</h2>";
+                        }
+                        while($row=mysqli_fetch_assoc($result_query)){
+                            $product_id=$row['product_id'];
+                            $product_title=$row['product_title'];
+                            $product_description=$row['product_description'];
+                            $category_id=$row['category_id'];
+                            $product_image1=$row['product_image1'];
+                            $product_price=$row['product_price'];
+                            echo "<div class='product'>
+                                            <div class='pro_image'>
+                                                <img src='system/product_images/$product_image1' alt='$product_title'>
+                                            </div>
+                                            <p class='product_title'>$product_title</p>
+                                            <p class='price'>&cent; <span style = 'color:red;'> $product_price</span></p>
+                                            <div class = 'flex-btn'>
+                                            <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                                            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                                            </div>
+                                        </div>";
+                        }
+                    }
+ 
+
+// A function to display breakfast categories
+function getBreakfastCategories(){
+    global $con;
+    $select_category="select * from `categories` where category_id = 1 ";
                         $result_category=mysqli_query($con,$select_category);
                         while($row_data=mysqli_fetch_assoc($result_category)){
                             $category_title=$row_data['category_title'];
                             $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='accessories.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
+                            echo "<li><a href='breakfast.php'>BreakFast</a></li>
+                                    ";
                     
                         }
 }
-// A function to display Boleros and shrugs categories
-function getBolerosAndShrugsCategories(){
+// A function to display Lunch categories
+function getLunchCategory(){
     global $con;
-    $select_category="select * from `categories` where category_id = 12";
+    $select_category="select * from `categories` where category_id = 2 ";
                         $result_category=mysqli_query($con,$select_category);
                         while($row_data=mysqli_fetch_assoc($result_category)){
                             $category_title=$row_data['category_title'];
                             $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='boleros.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
+                            echo "<li><a href='lunch.php'>Lunch</a></li>";
                     
                         }
 }
-// A function to display Hair  categories
-function getHairCategories(){
+// A function to display Super category
+function getSuper(){
     global $con;
-    $select_category="select * from `categories` where category_id = 13";
+    $select_category="select * from `categories` where category_id = 3";
                         $result_category=mysqli_query($con,$select_category);
                         while($row_data=mysqli_fetch_assoc($result_category)){
                             $category_title=$row_data['category_title'];
                             $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='hair.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
-                    
-                        }
-}
-// A function to display Hand Bags categories
-function getHandBagsCategories(){
-    global $con;
-    $select_category="select * from `categories` where category_id = 14";
-                        $result_category=mysqli_query($con,$select_category);
-                        while($row_data=mysqli_fetch_assoc($result_category)){
-                            $category_title=$row_data['category_title'];
-                            $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='handbag.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
-                    
-                        }
-}
-// A function to display Jewelry categories
-function getJewelryCategories(){
-    global $con;
-    $select_category="select * from `categories` where category_id = 15";
-                        $result_category=mysqli_query($con,$select_category);
-                        while($row_data=mysqli_fetch_assoc($result_category)){
-                            $category_title=$row_data['category_title'];
-                            $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='jewelry.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
-                    
-                        }
-}
-// A function to display Shoes categories
-function getShoesCategories(){
-    global $con;
-    $select_category="select * from `categories` where category_id = 16";
-                        $result_category=mysqli_query($con,$select_category);
-                        while($row_data=mysqli_fetch_assoc($result_category)){
-                            $category_title=$row_data['category_title'];
-                            $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='shoes.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
-                    
-                        }
-}
-// A function to display watches categories
-function getWatchesCategories(){
-    global $con;
-    $select_category="select * from `categories` where category_id = 17";
-                        $result_category=mysqli_query($con,$select_category);
-                        while($row_data=mysqli_fetch_assoc($result_category)){
-                            $category_title=$row_data['category_title'];
-                            $category_id=$row_data['category_id'];
-                            echo "<li class='nav-item'>
-                                <a href='watches.php?category=$category_id' class = 'category'>$category_title</a>
-                                </li>";
+                            echo "<li><a href='super.php'>Super</a></li>";
                     
                         }
 }
@@ -451,9 +283,11 @@ function view_details(){
                             echo "<div class='product'>
                                     <img src='system/product_images/$product_image1' alt = '$product_title'>
                                     <div class='text'>
-                                    <p>$product_title</p>
-                                    <p>$product_description</p>
-                                    <p>&cent; <span style = 'color:red;'> $product_price</span></p>
+                                        <div class='title_description'>
+                                            <p class='title'>$product_title</p>
+                                        <p class='description'>$product_description</p>
+                                        </div>
+                                        <p class='price'>&cent; <span style = 'color:red; font-size: 25px;'> $product_price</span></p>
                                     </div>
                                     <div class = 'flex-btn'>
                                     <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
@@ -507,6 +341,7 @@ function cart(){
     }
 }
 
+
 // cart number function
 function cart_num(){
     global $con; 
@@ -543,5 +378,31 @@ function getTotalCartPrice(){
         }
     }
     echo $total_price;
+}
+
+// get user order details
+
+function get_order_details(){
+    global $con;
+    $username=$_SESSION['username'];
+    $get_details="SELECT * FROM `user_table` where username='$username'";
+    $query_details=mysqli_query($con,$get_details);
+    while($details_row=mysqli_fetch_array($query_details)){
+        $user_id=$details_row['user_id'];
+        if(!isset($_GET['edit_account'])){
+            IF(!isset($_GET['my_orders'])){
+                IF(!isset($_GET['delete_account'])){
+                    $get_ordes="SELECT * FROM `user_orders` where user_id=$user_id and order_status='pending'";
+                    $run_orders=mysqli_query($con,$get_ordes);
+                    $rows_count=mysqli_num_rows($run_orders);
+                    if($rows_count>0){
+                        echo "<div style ='text-align:center;'><h1>You have <span style = 'color:red; '>$rows_count</span> pending orders</h1><a href='profile.php?my_orders' style='margin-bottom:10px;'>My Orders</a></div>";
+                    }else{
+                        echo "<div style ='text-align:center;'><h1>You have zero pending orders</h1><a href='../index.php' style='margin-bottom:10px;'>Explore More</a></div>";
+                    }
+                }
+            }
+        }
+    }
 }
 ?>

@@ -25,4 +25,12 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+// linking order button to items page
+
+const order = document.getElementById('order');
+
+order.addEventListener('click', () =>{
+  window.open('items.php','_self');
+});
+
 

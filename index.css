@@ -71,6 +71,7 @@ nav[class = "top"]{
     font-size: 20px;
 }
 .search input[type=submit]{
+    margin-left: 3px;
     color: #cd3333;
 }
 /* user account registration */
@@ -721,9 +722,8 @@ img {
 }
 
 .special_menu ul li img {
-    width: 100px;
+    width: 200px;
     height: 100px;
-    object-fit: contain;
 }
 
 .special_menu ul li p {
@@ -954,7 +954,6 @@ body .location{
                 border: 2px solid #e16666;
                 outline: none;
             }
-    
             .search .search_container input[type=submit] {
                 width: 70px;
                 padding: 9px 5px;
@@ -986,6 +985,8 @@ body .location{
             justify-self: center;
         }
 
+
+        /* reviews sections */
         .info_cart {
             width: 280px;
             height: 200px;
@@ -995,13 +996,14 @@ body .location{
         }
 
         .info_cart img {
-            width: 40px;
-            height: 40px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
         }
 
         .info_cart .image {
-            width: 40px;
+            width: 90px;
+            height: 90px;
             margin: auto;
             position: relative;
         }

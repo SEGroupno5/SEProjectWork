@@ -1,3 +1,7 @@
+<?php
+include('system/includes/connect.php');
+include('system/functions/common_function.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +22,7 @@
             width: 70%;
             text-align: center;
             margin: auto;
+            margin-top: 20px;
             background-color: white;
             padding-bottom: 20px;
             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -28,12 +33,11 @@
             text-align: center;
         }
         ul{
-            width: 70%;
+            width: 100%;
             margin: auto;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
+            justify-content: space-evenly;
         }
         ul li{
             list-style-type: none;
@@ -45,7 +49,7 @@
             padding-bottom: 10px;
         }
         ul li img{
-            width: 50px;
+            width: 100px;
         }
         .message{
             text-align: center;
@@ -54,54 +58,52 @@
             color: #CD3333;
             font-weight:700;
         }
-        a{
-            position: absolute;
-            left: 10px;
+         .homeBtn{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .backHome{
+            text-align: left;
+            margin-left: 10px;
             bottom: 10px;
             padding: 7px 15px;
+            border-radius: 10px;
             background-color: #CD3333;
             color: white;
             text-decoration: none;
         }
+        .payment_header{
+            color: #2A438e;
+        }
     </style>
 </head>
 <body>
+
+        <?php
+            $user_ip = getIPAddress();
+            $get_user = "SELECT * FROM `user_table` where user_ip='$user_ip'";
+            $result_query=mysqli_query($con,$get_user);
+            $run_query=mysqli_fetch_array($result_query);
+            $user_id=$run_query['user_id'];
+        ?>
+
     <div class="wrapper">
-        <h1 class="text-center my-5">Payment Page</h1>
-    <h3 class="text-center">You are making an offline payment!</h3>
-    <div class="payment_options">
-        <h3>Choose payment method</h3>
-        <ul>
-            <li class="paypal"> <img src="system/images/paymentMethodsImages/paypal.avif" alt=""> </li>
-            <li class="mtn"><img src="system/images/paymentMethodsImages/mtnmomo.jpeg" alt=""></li>
-            <li class="vf"><img src="system/images/paymentMethodsImages/vfcash.png" alt=""></li>
-        </ul>
-        
+        <h1 class="payment_header">Payment Option</h1>
+            <h3 class="text-center">You are making payment! to your cart items</h3>
+            <div class="payment_options">
+                <h3>Choose payment method</h3>
+                <ul>
+                    <li><a href="https://www.paypal.com" target='_blank'><img src="system/images/paymentMethodsImages/paypal.avif" alt="Paypal"></a></li>
+                    <li class="mtn" style='color:chartreuse;'><h2><a href='user_area/order.php?user_id=<?php echo $user_id ?>'>Offline Payment</a></h2></li>
+                </ul>
+                
+            </div>
+            <div class="homeBtn">
+                <a href="./index.php" class='backHome'>Home</a>
+            </div>
+            <div class="message"></div>
     </div>
-    <a href="index.php">Home</a>
-    <div class="message"></div>
-    </div>
-    <script>
-        const paypal = document.querySelector('.paypal');
-        const mtn = document.querySelector('.mtn');
-        const vf = document.querySelector('.vf');
-        const message = document.querySelector('.message');
-
-        paypal.addEventListener('click', function(e){
-            
-                message.innerHTML = "You've made a successful purchased. <br> Thanks for shopping with";
-        });
-        mtn.addEventListener('click', function(e){
-            
-                message.innerHTML = "You've made a successful purchased. <br> Thanks for shopping with";
-        });
-        vf.addEventListener('click', function(e){
-            
-                message.innerHTML = "You've made a successful purchased. <br> Thanks for shopping with";
-        });
-
-        
-
-    </script>
+    
 </body>
 </html>

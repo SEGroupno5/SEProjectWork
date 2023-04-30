@@ -14,8 +14,7 @@ session_start();
     <link rel="stylesheet" href="fontawesome/css/all.css?v=<?= time();?>">
     <!-- custom css links -->
     <link rel="stylesheet" href="index.css?v=<?= time();?>">
-    <style>
-    </style>
+
 </head>
 <body>
 
@@ -80,7 +79,7 @@ session_start();
                     <a href="index.php" class = "active">Home</a>
                 </li>
                 <li>
-                    <a href="index.php">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="items.php">Items</a>
@@ -89,7 +88,7 @@ session_start();
                     <a href="pages.php">Pages</a>
                 </li>
                 <li>
-                    <a href="index.php">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
             </ul>
             <!-- cart section -->
@@ -115,7 +114,7 @@ session_start();
                 <h4>Best In Town</h4>
                 <h1>ENJOY OUR CHICKEN<br><span style="color:#CD3333;"> BURGER</span> FAST FOOD</h1>
             <div class="btn">
-                <p class='order'>Order Now</p>
+                <a href="items.php"><p class='order'>Order Now</p></a>
                 <p class="price">Price: GH&cent; 55.50</p>
             </div>
         </div>
@@ -141,7 +140,7 @@ session_start();
                 <span class="dot" onclick="currentSlide(3)"></span> 
         </div>
     </div>
-
+ 
     <!-- forth child -->
     <!-- Popular food staffs -->
     <div class="popular_dish_container">

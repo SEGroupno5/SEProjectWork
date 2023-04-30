@@ -16,7 +16,7 @@ session_start();
      <!-- fontawesome css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css -->
-    <link rel="stylesheet" href="products.css?= time();?>">
+    <link rel="stylesheet" href="products.css?v=<?= time();?>">
 </head>
 <body>
     <!-- brand details -->
@@ -88,14 +88,10 @@ session_start();
             <div class="content-fluid">
                 <div class="navbar-container">
                     <ul class="categories">
-                       <?php
-                            getAssCategories();
-                            getBolerosAndShrugsCategories();
-                            getHairCategories();
-                            getHandBagsCategories();
-                            getJewelryCategories();
-                            getShoesCategories();
-                            getWatchesCategories();
+                       <?php 
+                            getBreakfastCategories();
+                            getLunchCategory();
+                            getSuper();
                         ?>
                     </ul>
                 </div>
@@ -131,27 +127,27 @@ session_start();
     
         <!-- category name -->
         <div class="category-name">
-            GET YOUR LUNCH HERE.
+            LUNCH IS READY!.
         </div>
     <!-- top selling products -->
-        <div class="top-selling">
-            <div class="content-container">
-                <h1>POPULAR DISHES</h1>
-                <div class="products">
-                    <?php
-                        getTopsellingProduct();
-                    ?>
-                </div>
-            </div>
+    <!-- calling the getTopSellingProducts -->
+        <div class="popular_dish_container">
+        <div class="popular_dish">
+            <h1>Popular Dishes</h1>
+            <ul class="images">
+                <?php 
+                    getTopsellingProduct();
+                ?>
+            </ul>
         </div>
 
-        <!-- Watches -->
+        <!-- FOOD STAFFS -->
         <div class="top-selling Watches">
             <div class="content-container">
-                <h1>Watches</h1>
+                <h1>FAST FOODS</h1>
                 <div class="products">
                     <?php
-                        get_unique_category();
+                        getUniqueLunchFood();
                     ?>
                 </div>
             </div>

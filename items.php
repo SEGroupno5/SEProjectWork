@@ -39,7 +39,7 @@ session_start();
                     <div class="content-fluid header">
                             <div class="brand-details">
                                 <div class="brand-name">
-                                    <h2 class="tel text-white"><a href = 'index.php'>MealRunner</a></h2>
+                                    <h2 class="tel text-white"><a href="index.php">MealRunner</a></h2>
                                 </div>
                                 <div class="contact-logo text-white">
                                     <i class="fa-solid fa-basket-shopping"></i>
@@ -52,21 +52,27 @@ session_start();
                                     <input type="submit" value="Search" class="btn btn-outline-success text-white m-10" name = "search_btn">
                                     </form>
                                 </li>
-                                
+                                <div class='d-flex'>  
+                    
+                
+                
                                     <?php
                                         if(!isset($_SESSION['username'])){
-                                            echo"<li class='tabs nav-item user-account'>
-                                    <span> <a href='user_area/user_registration.php'>Register</a></span>
-                                    <div class='d-flex'>";
+                                            echo"<div class='register'>
+                                            <a href='user_area/user_registration.php'>Register</a>
+                                            </div>";
                                         }else{
-                                            echo"<p>Welcome"." ".$_SESSION['username']." "."</p>";
+                                            echo"<p class = 'user_name'>Welcome"." ".$_SESSION['username']." "."</p>";
                                         }
                                         if(!isset($_SESSION['username'])){
-                                            echo"<a href='user_area/user_login.php' class='login'><p></p>Login</a>";
+                                            echo"<div class='login'>
+                                            <a href='user_area/user_login.php'><p></p>Login</a>
+                                            </div>";
                                         }else{
-                                            echo"<a href='user_area/user_logout.php' class='logout'><p></p> Logout</a>";
+                                            echo"<div class = 'logout'><a href='user_area/user_logout.php' class='logout'><p></p> Logout</a></div>";
                                         }
                                     ?>
+                    </div>
                                     </div>
                                 </li>
                             </ul>
@@ -89,14 +95,10 @@ session_start();
             <div class="content-fluid">
                 <div class="navbar-container">
                     <ul class="categories">
-                        <?php
-                            getAssCategories();
-                            getBolerosAndShrugsCategories();
-                            getHairCategories();
-                            getHandBagsCategories();
-                            getJewelryCategories();
-                            getShoesCategories();
-                            getWatchesCategories();
+                        <?php 
+                            getBreakfastCategories();
+                            getLunchCategory();
+                            getSuper();
                         ?>
                     </ul>
                 </div>
@@ -143,57 +145,52 @@ session_start();
                 </div>
             </div>
         </div>
-    
+<div class="wrapAll">
     <!-- top selling products -->
     <!-- calling the getTopSellingProducts -->
-        <div class='top-selling'>
-            <div class='content-container'>
-                <h1>BEST LOCAL AND CONTINENTAL DISHES</h1>
-                <div class='products' name = 'category'>
-                    <?php
-                        getTopsellingProduct();
-                        // $ip = getIPAddress();  
-                        // echo 'User Real IP Address - '.$ip;  
-
-                    ?>
-                </div>
-            </div>
+        <div class="popular_dish_container">
+        <div class="popular_dish">
+            <h1>Popular Dishes</h1>
+            <ul class="images">
+                <?php 
+                    getTopsellingProduct();
+                ?>
+            </ul>
         </div>
+    </div>
         
 
         <!-- categories -->
         <div class="categories-product">
-            <div class="content-container">
-                <div class="c-product">
-                    <div>
-                        <a href="accessories.php"><img src="systemFiles/images/products/accessories/ipad10gen-glass-removebg-preview.png" alt=""></a>
-                    </div>
-                    <p>Accessories</p>
+            <div class="menu_container">
+                <div class="txt">
+                    <h1>Get What You Want Here</h1>
+                    <h2 style="color: #cd3333;">Do You want a......</h2>
                 </div>
-                <div class="c-product">
-                    <div>
-                        <a href="boleros.php"><img src="systemFiles/images/products/boleros/P00526944-removebg-preview.png" alt=""></a>
-                    </div>
-                    <p>Boleros and shrugs</p>
-                </div>
-                <div class="c-product">
-                    <div>
-                        <a href="hair.php">
-                            <img src="systemFiles/images/products/hair/14008301_18466013_1000-removebg-preview.png" alt="">
-                        </a>
-                    </div>
-                    <p>Hair accessories</p>
-                </div>
+                <a href="breakfast.php" class="card">
+                    <img src="system/images/others/breakfast.jpg" alt="breakFast banner">
+                    <h3>BreakFast</h3>
+                </a>
+                <a href="breakfast.php" class="card">
+                    <img src="system/images/others/lunch.webp" alt="Lunch banner">
+                    <h3>Lunch</h3>
+                </a>
+                <a href="breakfast.php" class="card">
+                    <img src="system/images/others/breakfast.jpg" alt="breakFast banner">
+                    <h3>Super</h3>
+                </a>
             </div>
         </div>
 
         <!-- Accessories -->
         <div class="top-selling accessories">
             <div class="content-container">
-                <h1><?php getAssCategories(); ?></h1>
+                <h1><?php 
+                            getBreakfastCategories();
+                    ?></h1>
                 <div class="products">
                    <?php
-                       getUniqueAssCategory();
+                       getUniqueBreakfastFood();
                     ?>
                 </div>
             </div>
@@ -201,10 +198,14 @@ session_start();
         <!-- Boleros and Shrugs -->
         <div class="top-selling Bolero-Shrugs">
             <div class="content-container">
-                <h1><?php getBolerosAndShrugsCategories(); ?></h1>
+                <h1>
+                    <?php 
+                            getLunchCategory();;
+                    ?>
+                </h1>
                 <div class="products">
                     <?php    
-                        getUniquebolerosCategory();
+                        getUniqueLunchFood();
                     ?>
                 </div>
             </div>
@@ -212,58 +213,20 @@ session_start();
         <!-- Hair Accessories -->
         <div class="top-selling Hair-Accessories">
             <div class="content-container">
-                <h1><?php  getHairCategories(); ?></h1>
+                <h1>
+                    <?php 
+                            getSuper();
+                    ?>
+                </h1>
                 <div class="products">
                     <?php    
-                        getUniqueHairCategory();
+                        getUniqueSuperFood();
                     ?>
                 </div>
             </div>
         </div>
-        <!-- Hand Bags -->
-        <div class="top-selling Hand-Bags">
-            <div class="content-container">
-                <h1><?php  getHandBagsCategories(); ?></h1>
-                <div class="products">
-                    <?php    
-                        getUniqueHandbagsCategory();
-                    ?>
-                </div>
-            </div>
-        </div>
-        <!-- Jewelry -->
-        <div class="top-selling Jewelry">
-            <div class="content-container">
-                <h1><?php getJewelryCategories(); ?></h1>
-                <div class="products">
-                    <?php    
-                        getUniqueJewlryCategory();
-                    ?>
-                </div>
-            </div>
-        </div>
-        <!-- Shoes -->
-        <div class="top-selling Shoes">
-            <div class="content-container">
-                <h1><?php getShoesCategories(); ?></h1>
-                <div class="products">
-                   <?php    
-                        getUniqueShoesCategory();
-                    ?>
-                </div>
-            </div>
-        </div>
-        <!-- Watches -->
-        <div class="top-selling Watches">
-            <div class="content-container">
-                <h1><?php getWatchesCategories(); ?></h1>
-                <div class="products">
-                    <?php    
-                        getUniqueWatchesCategory();
-                    ?>
-                </div>
-            </div>
-        </div>
+        
+    </div>
 
     </div>
 
