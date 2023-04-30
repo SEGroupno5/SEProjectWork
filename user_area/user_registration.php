@@ -1,6 +1,6 @@
 <?php
-    include('../systemFiles/includes/connect.php');
-    include('../systemFiles/functions/common_function.php')
+    include('../system/includes/connect.php');
+    include('../system/functions/common_function.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,54 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="user_register.css">
+    <style>
+        .container-fluid{
+            margin-top: 180px;
+            padding: 30px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .form-label{
+            display: block;
+            font-size: 30px;
+            margin: 15px 0px 2px 0px;
+        }
+        input{
+            width: 500px;
+            padding: 10px 50px 10px 3px;
+            font-size: 20px;
+            background-color: #fff;
+            border: none;
+            border-bottom: 1px solid #cd3333;
+            outline: none;
+        }
+        input[type=submit]{
+            width: 560px;
+            font-size: 25px;
+            margin-top: 20px;
+            font-weight: 500;
+            border-radius: 10px;
+            background-color: #cc5c33;
+            cursor: pointer;
+        }
+        input[type=submit]:hover{
+            color: #fff;
+            background-color: #cd3333;
+        }
+        .form-outline:nth-child(2){
+            margin-bottom: 20px;
+        }
+        .small{
+            width: 100%;
+            text-align: right;
+            font-size: 18px;
+        }
+        .small a{
+            text-decoration: none;
+            color: #cd3333;
+        }
+    </style>
 </head>
 <body>
 
@@ -112,7 +160,7 @@ if(isset($_POST['user_registration'])){
         echo"<script>alert('You have items in cart')</script>";
         echo"<script>window.open('checkout.php','_self')</script>";
     }else{
-        echo"<script>window.open('../index.php','_self')</script>";
+        echo"<script>window.open('user_login.php','_self')</script>";
     }
 }
 ?>

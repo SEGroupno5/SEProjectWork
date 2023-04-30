@@ -15,6 +15,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -39,6 +40,7 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 
 .wrapper{
@@ -54,6 +56,7 @@ a {
     color: #fff;
     background-color: #000;
     flex-direction: column;
+    z-index: 1000;
 }
 .left_sidebar img{
     width: 100%;
@@ -82,6 +85,7 @@ a {
     display: flex;
     margin-bottom: 20px;
     padding-left: 20px;
+    font-size: 22px;
     color: #000;
     flex-direction: column;
     align-items: flex-start;
@@ -91,7 +95,7 @@ a {
 .control_panel .btns button{
     text-align: center;
     background-color: #000;
-    font-size: 17px;
+    margin: 10px 0px;
     border: none;
 }
 .control_panel .btns button:focus{
@@ -104,9 +108,11 @@ a {
 /* right sidebar */
 .right_sidebar {
     position: relative;
-    width: 85%;
-    margin: auto;
+    width: 100%;
     margin-left: 200px;
+    background-image: url(../images/bg/plainBG.jpg);
+    background-size: cover;
+    height: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;

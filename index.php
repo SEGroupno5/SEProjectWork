@@ -1,3 +1,8 @@
+<?php
+include('system/functions/common_function.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +14,8 @@
     <link rel="stylesheet" href="fontawesome/css/all.css?v=<?= time();?>">
     <!-- custom css links -->
     <link rel="stylesheet" href="index.css?v=<?= time();?>">
+    <style>
+    </style>
 </head>
 <body>
 
@@ -16,38 +23,70 @@
     <nav class="top">
         <div class="container-fluid">
             <div class="container">
-                <ul>
-                    <li><i class = "fas fa-clock"></i> 7:30AM-9:30PM</li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i></i> +233 558 465 569</li>
-                </ul>
-                <ul>
-                    <li><a href="register.php">Register</a></li>
-                </ul>
+                <div class="contact_line">
+                    <p><i class = "fas fa-clock"></i> 7:30AM-9:30PM</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i></i> +233 558 465 569</p>
+                </div>
+                <!-- searching for product  -->
+                <div class="search">
+                                    <form class="d-flex search_form" role="search" action="search_products.php" method="get">
+                                    <input class="form-control me-2" type="search" placeholder="Search all products here" aria-label="Search" name = "search_value">
+                                    <input type="submit" value="Search" class="btn btn-outline-success text-white m-10" name = "search_btn">
+                                    </form>
+                </div>
+                <div class='d-flex'>  
+                    
+                
+                
+                                    <?php
+                                        if(!isset($_SESSION['username'])){
+                                            echo"<div class='register'>
+                                            <a href='user_area/user_registration.php'>Register</a>
+                                            </div>";
+                                        }else{
+                                            echo"<p class = 'user_name'>Welcome"." ".$_SESSION['username']." "."</p>";
+                                        }
+                                        if(!isset($_SESSION['username'])){
+                                            echo"<div class='login'>
+                                            <a href='user_area/user_login.php'><p></p>Login</a>
+                                            </div>";
+                                        }else{
+                                            echo"<div class = 'logout'><a href='user_area/user_logout.php' class='logout'><p></p> Logout</a></div>";
+                                        }
+                                    ?>
+                    </div>
             </div>
         </div>
     </nav>
+    <!-- calling the cart function -->
+
+        <?php
+            cart();
+        ?>
     <!-- second child -->
+    <!-- Company logo and navigational buttons -->
     <nav class='menu_navbar'>
        <div class="container">
             <!-- Logo -->
             <ul class="logo">
                 <li>
                     <img src="system/images/logo/restaurant-icon-orange-sticker-vector-1789907-removebg-preview.png" alt="">
+                    <h2><span style = "color:#CD3333">Meal</span>Runner</h2>
                 </li>
             </ul>
             <!-- menu tabs / navigational buttons -->
             <ul class="navbars">
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="index.php" class = "active">Home</a>
                 </li>
                 <li>
                     <a href="index.php">About</a>
                 </li>
                 <li>
-                    <a href="system/pages/item.php">Items</a>
+                    <a href="items.php">Items</a>
                 </li>
                 <li>
-                    <a href="index.php">Pages</a>
+                    <a href="pages.php">Pages</a>
                 </li>
                 <li>
                     <a href="index.php">Contact</a>
@@ -55,25 +94,18 @@
             </ul>
             <!-- cart section -->
             <div class="shopping_cart">
-                <div class="cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="cart_number">
-                    <p>0</p>
-                </div>
-            </div>
-            <div class="delivery">
-                <div>
-                    <p>Free delivery</p>
-                </div>
-                <div>
-                    <img src="system/images/others/WAHM-UberEats-removebg-preview.png" alt="">
-                </div>
+                <ul class="cart-container">
+                                <li class="nav-item">
+                                    <div class="shopping-cart" onclick="poppup()">
+                                        <a href="cart.php">
+                                            <i class="fas fa-cart-arrow-down cart"></i>
+                                            <p id="count"><?php cart_num();?></p>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
             </div>
             <!-- login -->
-            <div class="login">
-                <p>Login</p>
-            </div>
        </div>
     </nav>
 
@@ -83,24 +115,8 @@
                 <h4>Best In Town</h4>
                 <h1>ENJOY OUR CHICKEN<br><span style="color:#CD3333;"> BURGER</span> FAST FOOD</h1>
             <div class="btn">
-                <p class='order'>Oder Now</p>
+                <p class='order'>Order Now</p>
                 <p class="price">Price: GH&cent; 55.50</p>
-            </div>
-            <div class="social_media_icon">
-                <ul>
-                    <li>
-                        <a href="twitter.com"><i class='fab fa-twitter'></i></a>
-                    </li>
-                    <li>
-                        <a href="facebook.com"><i class='fab fa-facebook'></i></a>
-                    </li>
-                    <li>
-                        <a href="instagram.com"><i class='fab fa-instagram'></i></a>
-                    </li>
-                    <li>
-                        <a href="linkedin.com"><i class='fab fa-linkedin'></i></a>
-                    </li>
-                </ul>
             </div>
         </div>
         <!-- images -->
@@ -126,14 +142,6 @@
         </div>
     </div>
 
-    <!-- searching for product -->
-    <div class="search">
-        <div class="search_container">
-            <input type="search" name="search">
-            <input type="submit" value="Search">
-        </div>
-    </div>
-
     <!-- forth child -->
     <!-- Popular food staffs -->
     <div class="popular_dish_container">
@@ -141,25 +149,17 @@
         <div class="popular_dish">
             <h1>Popular Dishes</h1>
             <ul class="images">
-                <li>
-                    <img src="system/images/food/bg/orange_juice.jpg" alt="">
-                </li>
-                <li>
-                    <img src="system/images/food/bg/stick_meat.jpeg" alt="">
-                </li>
-                <li>
-                    <img src="system/images/food/bg/vegetable_jollof.jpg" alt="">
-                </li>
-                <li>
-                    <img src="system/images/food/bg/yam_kontomire-stew.webp" alt="">
-                </li>
-                <li>
-                    <img src="system/images/food/bg/dessert.jpg" alt="">
-                </li>
+                <?php 
+                    getTopsellingProduct();
+                ?>
             </ul>
         </div>
     </div>
-
+            
+    <!-- calling the search function -->
+    <?php search_products(); ?>
+    
+    
     <!-- rich and healthy  -->
     <h1 class="message_header">RICH & HEALTHY</h1>
     <!-- information -->
@@ -463,7 +463,25 @@
     <!-- last child -->
     <!-- footer -->
     <footer class="footer">
+        <div class="copyRight">
         CopyRight &copy; 2023 || SE Group5
+        </div>
+        <div class="social_media_icon">
+                <ul>
+                    <li>
+                        <a href="twitter.com"><i class='fab fa-twitter'></i></a>
+                    </li>
+                    <li>
+                        <a href="facebook.com"><i class='fab fa-facebook'></i></a>
+                    </li>
+                    <li>
+                        <a href="instagram.com"><i class='fab fa-instagram'></i></a>
+                    </li>
+                    <li>
+                        <a href="linkedin.com"><i class='fab fa-linkedin'></i></a>
+                    </li>
+                </ul>
+            </div>
     </footer>
 
     <!-- JavaScript links -->
@@ -472,5 +490,6 @@
     <script src = 'fontawesome/js/all.js'></script>
     <!-- custome js -->
     <script src = 'index.js'></script>
+    <script src="js/addToCart.js"></script>
 </body>
 </html>

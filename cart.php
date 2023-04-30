@@ -15,19 +15,13 @@ include("system/functions/common_function.php");
     <link rel="stylesheet" href="fontawesome/css/all.css?v=<?= time();?>">
     <!-- custom css links -->
     <link rel="stylesheet" href="index.css?v=<?= time();?>">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="cart.css?v=<?= time();?>">
 </head>
 <body>
 
     <!-- first child -->
     <nav class="top">
         <div class="container-fluid">
-            <div class="container">
-                <ul>
-                    <li><i class = "fas fa-clock"></i> 7:30AM-9:30PM</li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i></i> +233 558 465 569</li>
-                </ul>
-            </div>
         </div>
     </nav>
     <!-- second child -->
@@ -65,10 +59,10 @@ include("system/functions/common_function.php");
     <div class="container-fluid">
     
                 <!-- Cart table -->
-                <div class="container marginTop">
+                <div class="container">
                     <div class="row">
                         <form action="" method = "POST">
-                        <table class="table table-bordered text-center">
+                        <table class="table">
                             
                             <tbody>
                                 <!-- php code to display dynamic cart element -->
@@ -82,12 +76,12 @@ include("system/functions/common_function.php");
     if($results_count>0){
         echo "<thead>
                                 <tr>
-                                    <th>Product title</th>
-                                    <th>Product Image</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Remove</th>
-                                    <th colspan='2'>Operations</th>
+                                    <th  style = 'padding: 20px 20px 20px 0px; font-size:25px;'>Product title</th>
+                                    <th style = 'padding: 20px 20px 20px 0px; font-size:25px;'>Product Image</th>
+                                    <th style = 'padding: 20px 20px 20px 0px; font-size:25px;'>Quantity</th>
+                                    <th style = 'padding: 20px 40px 20px 20px; font-size:25px;'>Price</th>
+                                    <th style = 'padding: 20px 20px 20px 0px; font-size:25px;'>Remove</th>
+                                    <th colspan='2' style = 'padding: 20px 20px 20px 0px; font-size:25px;'>Operations</th>
                                 </tr>
                             </thead>";
     while($row=mysqli_fetch_array($result_cart)){
@@ -103,10 +97,10 @@ include("system/functions/common_function.php");
             $total_price +=$product_price_values;
      
                                 ?>
-                                <tr>
-                                    <td><?php echo $product_title ?></td>
-                                    <td><img src="systemFiles/product_images/<?php echo $product_image1 ?>"/></td>
-                                    <td> <input type="text" name = 'qty' class = "form-input p-50"></td>
+                                <tr style="padding-bottom: 10px;" >
+                                    <td style=" margin-bottom: 10px;"><?php echo $product_title ?></td>
+                                    <td style = "border-radius: 20px; overflow: hidden; margin-bottom: 10px;"><img src="system/product_images/<?php echo $product_image1 ?>"/></td>
+                                    <td> <input type="text" style="border: none; border: 1px solid #cd3333; outline: none; border-radius: 10px; padding: 10px 20px;" name = 'qty' class = "form-input p-50"></td>
 
                                     <?php
                                         $ip = getIPAddress();
@@ -118,13 +112,13 @@ include("system/functions/common_function.php");
                                         }
                                     ?>
 
-                                    <td>&cent; <?php echo  $price_table ?> </td>
-                                    <td> <input type = 'checkbox'name='removeItem[]' value="<?php echo $product_id; ?>"/> </td>
+                                    <td style = "padding: 0px 40px; font-size: 25px;">&cent; <?php echo  $price_table ?> </td>
+                                    <td> <input type = 'checkbox' style = "width: 50px;" name='removeItem[]' value="<?php echo $product_id; ?>"/> </td>
                                     <td class="d-flex">
                                         <!-- <button class = "bg-color px-3 border-0 me-3">Update</button> -->
-                                        <input type="submit" value = "Update Cart" class = "bg-color px-3 border-0 me-3" name = "update_cart">
+                                        <input type="submit" value = "Update Cart" style="padding: 10px 20px; background-color: #cd3333; color: #fff; font-size: 20px; border: none; border-radius: 10px;" name = "update_cart">
                                         <!-- <button class = "bg-color px-3 border-0 me-3">Remove</button> -->
-                                        <input type="submit" value = "Remove Cart" class = "bg-color px-3 border-0 me-3" name = "remove_cart_item">
+                                        <input type="submit" style="padding: 10px 20px; background-color: #cd3333; color: #fff; font-size: 20px; border: none; border-radius: 10px;" value = "Remove Cart" class = "bg-color px-3 border-0 me-3" name = "remove_cart_item">
                                     </td>
                                 </tr>
                             </tbody>
@@ -145,10 +139,10 @@ include("system/functions/common_function.php");
     $results_count=mysqli_num_rows($result_cart);
     if($results_count>0){
         echo "<h4 class = 'px-3'>Total: &cent;<span style = 'color:red;'> $total_price</span></h4>
-                             <input type='submit' value = 'Continue Shopping' class = 'bg-color px-3 border-0 me-3' name = 'continue-shopping'>
-                             <button class = 'bg-color px-3 border-0 ms-3'><a href='user_area/checkout.php' class = 'text-white text-decoration-none'>checkout</a></button>";
+                             <input type='submit' style='margin-top:30px; padding: 10px 20px; background-color: #cd3333; color: #fff; font-size: 20px; border: none; border-radius: 10px;' value = 'Continue Shopping' name = 'continue-shopping'>
+                             <button  style='margin-top:30px; padding: 10px 20px; background-color: #cd3333; font-size: 20px; border: none; border-radius: 10px;'  class = 'bg-color px-3 border-0 ms-3'><a href='user_area/checkout.php' style = 'color: #fff;' class = 'text-white text-decoration-none'>checkout</a></button>";
     }else{
-        echo "<input type='submit' value = 'Continue Shopping' class = 'bg-color px-3 border-0 me-3' name = 'continue-shopping'>";
+        echo "<input type='submit'  style = 'margin-top:30px; background-color: #cd4444; color: #fff; cursor: pointer; border-radius: 10px; margin-bottom: 20px; border: none; padding: 10px 20px;'  value = 'Continue Shopping' class = 'bg-color px-3 border-0 me-3 back_home' name = 'continue-shopping'>";
     }
     if(isset($_POST['continue-shopping'])){
         echo "<script>window.open('index.php','_self')</script>";

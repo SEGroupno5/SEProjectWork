@@ -1,7 +1,8 @@
 
 <?php
-include('../systemFiles/includes/connect.php');
+include('../system/includes/connect.php');
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +46,6 @@ session_start();
         </div>
 
     </div>
-
-    <div class="footer">
-        <p> Web Tech Project work &copy;Group24 </p>
-    </div>
-    
                 <!-- JavaScript links -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
    <!-- custom js -->

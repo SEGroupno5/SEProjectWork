@@ -1,6 +1,10 @@
 <?php
-// including connect to the database file
-// include('../webTechGrou24/systemFiles/includes/connect.php');
+// // including connect to the database file
+// include_once("../includes/connect.php");
+$con=new mysqli('localhost', 'root', '', 'myfoodstore');
+if(!$con){
+    die(mysqli_error($con));
+}
 
 // getting products from the database
 function getProducts(){
@@ -46,15 +50,13 @@ function getTopsellingProduct(){
                             $category_id=$row['category_id'];
                             $product_image1=$row['product_image1'];
                             $product_price=$row['product_price'];
-                                echo "<div class='product'>
+                                echo "<li>
                                         <img src='system/product_images/$product_image1' alt='$product_title'>
-                                            <p>$product_title</p>
-                                            <p>&cent; <span style = 'color:red;'> $product_price</span></p>
-                                            <div class = 'flex-btn'>
+                                        <div class='food_btns'>
                                             <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                                            </div>
-                                        </div>";
+                                        </div>
+                                    </li>";
                         }
  }
 
@@ -415,7 +417,7 @@ function search_products(){
                             $product_image1=$row['product_image1'];
                             $product_price=$row['product_price'];
                             echo "<div class='product'>
-                                    <img src='systemFiles/product_images/$product_image1' alt = '$product_title'>
+                                    <img src='system/product_images/$product_image1' alt = '$product_title'>
                                     <p>$product_title</p>
                                     <p>&cent; <span style = 'color:red;'> $product_price</span></p>
                                     <div class = 'flex-btn'>
@@ -424,9 +426,10 @@ function search_products(){
                                     </div>
                                 </div>";
                         }
+
+
                     }
 }
-
 // view product details
 function view_details(){
     global $con;
@@ -506,7 +509,7 @@ function cart(){
 
 // cart number function
 function cart_num(){
-    global $con;
+    global $con; 
     if(isset($_GET['add_to_cart'])){
         $ip = getIPAddress();
         $select_query = "select * from `cart_details` where ip_address = '$ip'";

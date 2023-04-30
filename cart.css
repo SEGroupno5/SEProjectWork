@@ -23,17 +23,14 @@
 .shopping_cart p:hover{
     font-size: 28px;
 }
-.container-fluid{
+
+.container-fluid {
     width: 80%;
-    margin: auto;
+    margin: 50px auto;
 }
-.d-flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+th{
+    margin-bottom: 20px;
 }
-.text-danger{
-    text-align: center;
-    color: #cd3333;
-    margin: 20px;
+tbody img{
+    width: 100px;
 }

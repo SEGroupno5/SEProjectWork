@@ -1,0 +1,98 @@
+.wrapper{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2.0em;
+    font-size: 16px;
+}
+/* top navbar */
+.pageHeader {
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pageHeader h1 {
+    background-color: #ccc;
+    height: 70px;
+    margin-top: -100px;
+    padding-top: 20px;
+    margin-left: -40px;
+    margin-right: -250px;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(87, 86, 86, 0.17) 0px -23px 25px 0px inset, rgba(192, 191, 191, 0.15) 0px -36px 30px 0px inset, rgba(111, 111, 111, 0.1) 0px -79px 40px 0px inset, rgba(123, 123, 123, 0.06) 0px 2px 1px, rgba(142, 141, 141, 0.09) 0px 4px 2px, rgba(144, 143, 143, 0.09) 0px 8px 4px, rgba(210, 208, 208, 0.09) 0px 16px 8px, rgba(199, 196, 196, 0.09) 0px 32px 16px;
+}
+.left_sidebar {
+    margin-top: -0px;
+}
+.menu_container{
+    display: block;
+}
+.info_container h2, .info_container h2 span{
+    text-align: center;
+    font-size: 40px;
+}
+.dish_type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin: 30px;
+    color: #cd3333;
+}
+.type_of_dishes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.local_dishes h3, .continental_dishes h3{
+    font-size: 28px;
+    color: #cd3333;
+}
+.local_dishes h4,
+.continental_dishes h4{
+    color: #cd3333;
+    font-size: 24px;
+    margin: 10px;
+}
+.local_dishes ul li ul li,
+.continental_dishes ul li ul li{
+    margin-left: 25px;
+    font-size: 17px;
+}
+
+.btn #read_more{
+    margin: 20px;
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #cd3333;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.btn #read_more:hover{
+    background-color: #d75959;
+}
+.btn_clicked_data p{
+    font-size: 18px;
+}
+.btn_clicked_data h3{
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    margin: 20px;
+    color: #cd3333;
+}
+.btn_clicked_data h4{
+    font-size: 19px;
+    color: #cd3333;
+}
+.btn_clicked_data img{
+    margin: 20px 0px;
+}

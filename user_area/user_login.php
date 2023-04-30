@@ -1,7 +1,7 @@
 
 <?php
-include('../systemFiles/includes/connect.php');
-include('../systemFiles/functions/common_function.php');
+include('../system/includes/connect.php');
+include('../system/functions/common_function.php');
 session_start();
 ?>
 
@@ -12,15 +12,60 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <!-- boostrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="user_register.css">
+    <style>
+        .container-fluid{
+            margin-top: 180px;
+            padding: 30px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .form-label{
+            display: block;
+            font-size: 30px;
+            margin: 15px 0px 2px 0px;
+        }
+        input{
+            width: 500px;
+            padding: 10px 50px 10px 3px;
+            font-size: 20px;
+            background-color: #fff;
+            border: none;
+            border-bottom: 1px solid #cd3333;
+            outline: none;
+        }
+        input[type=submit]{
+            width: 560px;
+            font-size: 25px;
+            font-weight: 500;
+            border-radius: 10px;
+            background-color: #cc5c33;
+            cursor: pointer;
+        }
+        input[type=submit]:hover{
+            color: #fff;
+            background-color: #cd3333;
+        }
+        .form-outline:nth-child(2){
+            margin-bottom: 20px;
+        }
+        .small{
+            width: 100%;
+            text-align: right;
+            font-size: 18px;
+        }
+        .small a{
+            text-decoration: none;
+            color: #cd3333;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container-fluid mt-10">
-        <h2 class="text-center pt-2">USER LOGIN</h2>
+    <div class="container-fluid">
+        <h2 class="text-center">USER LOGIN</h2>
         <div class="row d-flex align-items-center justify-content-center mt-5">
             <div class="col-lg-12 col-xl-6">
                 <form action="" method="post">
@@ -37,7 +82,7 @@ session_start();
                     </div>
                     <div class="my-2">
                         <input type="submit" value = "Login" class="btn" name='user_login'>
-                        <p class="small fw-bold mt-2 pt-1">Don't have an account? <a href="user_registration.php" class='text-danger'> Register</a></p>
+                        <p class="small">Don't have an account? <a href="user_registration.php" class='text-danger'> Register</a></p>
                     </div>
                 </form>
             </div>
